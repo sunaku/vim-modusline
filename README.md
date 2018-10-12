@@ -3,6 +3,8 @@
 This plugin provides mode-specific coloring for your Vim statusline so that
 you can visually (through color) distinguish which mode Vim is currently in.
 
+[![asciicast](https://asciinema.org/a/206033.png)](https://asciinema.org/a/206033)
+
 ## Setup
 
 Install this plugin using your favorite Vim plugin manager and restart Vim.
