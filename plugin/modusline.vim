@@ -3,6 +3,10 @@ if exists('g:loaded_modusline')
 endif
 let g:loaded_modusline = 1
 
+" see :help use-cpo-save
+let s:save_cpo = &cpo
+set cpo&vim
+
 if empty(&statusline)
   set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P   " standard with ruler
 endif
@@ -66,3 +70,7 @@ augroup Modusline
         \ setlocal statusline&
 
 augroup END
+
+" see :help use-cpo-save
+let &cpo = s:save_cpo
+unlet s:save_cpo
