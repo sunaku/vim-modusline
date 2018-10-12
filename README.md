@@ -26,6 +26,15 @@ By default, this variable is defined as follows, unless you override it:
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 ```
 
+### `g:modusline_set_ls`
+
+You can assign 0 to this variable to prevent this plugin from changing the
+`laststatus` setting to always show the statusline for bottom-most windows:
+
+```vim
+let g:modusline_set_ls = 0
+```
+
 ### `g:modusline_colors`
 
 A dictionary that maps `mode()` values to `%#HLname#` statusline colors.

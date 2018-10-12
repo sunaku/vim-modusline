@@ -39,6 +39,10 @@ if !exists('g:modusline_labels')
   let g:modusline_labels = {}
 endif
 
+if get(g:, 'modusline_set_ls', 1)
+  set laststatus=2
+endif
+
 function! Modusline(statusline) abort
   let modus = mode(1)
   let color = ModuslineColor(modus)
