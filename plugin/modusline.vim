@@ -35,32 +35,32 @@ if !exists('g:modusline_labels')
   let g:modusline_labels = {}
 endif
 
-function! ModusLine(statusline) abort
+function! Modusline(statusline) abort
   let modus = mode(1)
-  let color = ModusLineColor(modus)
-  let label = ModusLineLabel(modus)
-  return ModusLineMerge(a:statusline, modus, color, label)
+  let color = ModuslineColor(modus)
+  let label = ModuslineLabel(modus)
+  return ModuslineMerge(a:statusline, modus, color, label)
 endfunction
 
-function! ModusLineColor(modus) abort
+function! ModuslineColor(modus) abort
   return get(g:modusline_colors, a:modus, '%#ErrorMsg#')
 endfunction
 
-function! ModusLineLabel(modus) abort
+function! ModuslineLabel(modus) abort
   return get(g:modusline_labels, a:modus, a:modus)
 endfunction
 
-function! ModusLineMerge(statusline, modus, color, label) abort
+function! ModuslineMerge(statusline, modus, color, label) abort
   return a:color .'‹'. a:label .'› '. a:statusline
 endfunction
 
-augroup ModusLine
+augroup Modusline
   autocmd!
 
   autocmd VimEnter,WinEnter,BufWinEnter *
         \ setlocal statusline& |
         \ let statusline=&statusline |
-        \ setlocal statusline=%!ModusLine(statusline)
+        \ setlocal statusline=%!Modusline(statusline)
 
   autocmd VimLeave,WinLeave,BufWinLeave *
         \ setlocal statusline&

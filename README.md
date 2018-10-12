@@ -80,15 +80,15 @@ Adds mode-specific colors and labels to the given statusline and returns
 a new statusline expression that you can assign via `:set statusline=`.
 
 ```vim
-function! ModusLine(statusline) abort
+function! Modusline(statusline) abort
   let modus = mode(1)
-  let color = ModusLineColor(modus)
-  let label = ModusLineLabel(modus)
-  return ModusLineMerge(a:statusline, modus, color, label)
+  let color = ModuslineColor(modus)
+  let label = ModuslineLabel(modus)
+  return ModuslineMerge(a:statusline, modus, color, label)
 endfunction
 ```
 
-### `ModusLineColor(modus)`
+### `ModuslineColor(modus)`
 
 Returns a `%#HLname#` statusline color for the given `mode()` value by
 referencing the `g:modusline_colors` dictionary, as described earlier:
@@ -96,12 +96,12 @@ If there is no entry for a particular `mode()` value in the dictionary,
 then this plugin falls back to using jarring `%#ErrorMsg#` as the color.
 
 ```vim
-function! ModusLineColor(modus) abort
+function! ModuslineColor(modus) abort
   return get(g:modusline_colors, a:modus, '%#ErrorMsg#')
 endfunction
 ```
 
-### `ModusLineLabel(modus)`
+### `ModuslineLabel(modus)`
 
 Returns a user-friendly labels (strings) for the given `mode()` value by
 referencing the `g:modusline_labels` dictionary, as described earlier:
@@ -109,17 +109,17 @@ If there is no entry for a particular `mode()` value in the dictionary,
 then this plugin falls back to using that `mode()` value as the label.
 
 ```vim
-function! ModusLineLabel(modus) abort
+function! ModuslineLabel(modus) abort
   return get(g:modusline_labels, a:modus, a:modus)
 endfunction
 ```
 
-### `ModusLineMerge(statusline, modus, color, label)`
+### `ModuslineMerge(statusline, modus, color, label)`
 
 Returns a statusline expression built up from all the pieces passed in.
 
 ```vim
-function! ModusLineMerge(statusline, modus, color, label) abort
+function! ModuslineMerge(statusline, modus, color, label) abort
   return a:color .'‹'. a:label .'› '. a:statusline
 endfunction
 ```
