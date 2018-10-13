@@ -1,0 +1,21 @@
+'n'      Normal mode
+'no'     Operator-pending mode
+'v'      Visual mode, by character
+'V'      Visual mode, by line
+<C-V>    Visual mode, blockwise
+'s'      Select mode, by character
+'S'      Select mode, by line
+<C-S>    Select mode, blockwise
+'i'      Insert mode
+'ic'     Insert mode completion
+'R'      Replace mode
+'Rc'     Replace mode completion
+'Rv'     Replace mode virtual
+'c'      Command mode
+'t'      Terminal mode
+
+vim:ft=sh nornu cursorline
+colorscheme summerfruit256
+highlight CursorLine guibg=white
+highlight PmenuSel guifg=white
+highlight! link DiffText ColorColumn
