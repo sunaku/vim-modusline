@@ -3,13 +3,29 @@
 This plugin provides mode-specific coloring for your Vim statusline so that
 you can visually (through color) distinguish which mode Vim is currently in.
 
-[![asciicast](https://asciinema.org/a/206033.png)](https://asciinema.org/a/206033)
-
 ## Setup
 
 Install this plugin using your favorite Vim plugin manager and restart Vim.
 Now change Vim modes and observe the statusline changing colors accordingly.
 That's all! For customization, read about *Variables* and *Functions* below.
+
+## Preview
+
+!['n'      Normal mode              ](https://github.com/sunaku/vim-modusline/raw/gh-pages/n.png)
+!['no'     Operator-pending mode    ](https://github.com/sunaku/vim-modusline/raw/gh-pages/no.png)
+!['v'      Visual mode, by character](https://github.com/sunaku/vim-modusline/raw/gh-pages/v.png)
+!['V'      Visual mode, by line     ](https://github.com/sunaku/vim-modusline/raw/gh-pages/V.png)
+!["\<C-V>" Visual mode, blockwise   ](https://github.com/sunaku/vim-modusline/raw/gh-pages/C-V.png)
+!['s'      Select mode, by character](https://github.com/sunaku/vim-modusline/raw/gh-pages/s.png)
+!['S'      Select mode, by line     ](https://github.com/sunaku/vim-modusline/raw/gh-pages/S.png)
+!["\<C-S>" Select mode, blockwise   ](https://github.com/sunaku/vim-modusline/raw/gh-pages/C-S.png)
+!['i'      Insert mode              ](https://github.com/sunaku/vim-modusline/raw/gh-pages/i.png)
+!['ic'     Insert mode completion   ](https://github.com/sunaku/vim-modusline/raw/gh-pages/ic.png)
+!['R'      Replace mode             ](https://github.com/sunaku/vim-modusline/raw/gh-pages/R.png)
+!['Rc'     Replace mode completion  ](https://github.com/sunaku/vim-modusline/raw/gh-pages/Rc.png)
+!['Rv'     Virtual Replace mode     ](https://github.com/sunaku/vim-modusline/raw/gh-pages/Rv.png)
+!['c'      Command mode             ](https://github.com/sunaku/vim-modusline/raw/gh-pages/c.png)
+!['t'      Terminal mode            ](https://github.com/sunaku/vim-modusline/raw/gh-pages/t.png)
 
 ## Variables
 
