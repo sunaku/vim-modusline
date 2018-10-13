@@ -33,6 +33,7 @@ if !exists('g:modusline_colors')
   let g:modusline_colors['!']      = '%#IncSearch#'  " Shell or external command is executing
   let g:modusline_colors['t']      = '%#DiffAdd#'    " Terminal mode: keys go to the job
   let g:modusline_colors['ic']     = '%#DiffChange#' " see :help ins-completion
+  let g:modusline_colors['Rc']     = '%#DiffChange#' " see :help ins-completion
 endif
 
 if !exists('g:modusline_labels')
