@@ -1,7 +1,7 @@
-# modusline: Mode-specific statusline colors
+# Modusline: Mode-specific statusline colors
 
-This plugin provides mode-specific coloring for your Vim statusline so that
-you can visually (through color) distinguish which mode Vim is currently in.
+This plugin adds mode-specific coloring to *your existing* statusline so you
+can visually distinguish (screenshots below) which mode Vim is currently in.
 
 ## Setup
 
@@ -9,23 +9,23 @@ Install this plugin using your favorite Vim plugin manager and restart Vim.
 Now change Vim modes and observe the statusline changing colors accordingly.
 That's all! For customization, read about *Variables* and *Functions* below.
 
-## Preview
+### Preview
 
-!['n'      Normal mode              ](https://github.com/sunaku/vim-modusline/raw/gh-pages/n.png)
-!['no'     Operator-pending mode    ](https://github.com/sunaku/vim-modusline/raw/gh-pages/no.png)
-!['v'      Visual mode, by character](https://github.com/sunaku/vim-modusline/raw/gh-pages/v.png)
-!['V'      Visual mode, by line     ](https://github.com/sunaku/vim-modusline/raw/gh-pages/V.png)
-!["\<C-V>" Visual mode, blockwise   ](https://github.com/sunaku/vim-modusline/raw/gh-pages/C-V.png)
-!['s'      Select mode, by character](https://github.com/sunaku/vim-modusline/raw/gh-pages/s.png)
-!['S'      Select mode, by line     ](https://github.com/sunaku/vim-modusline/raw/gh-pages/S.png)
-!["\<C-S>" Select mode, blockwise   ](https://github.com/sunaku/vim-modusline/raw/gh-pages/C-S.png)
-!['i'      Insert mode              ](https://github.com/sunaku/vim-modusline/raw/gh-pages/i.png)
-!['ic'     Insert mode completion   ](https://github.com/sunaku/vim-modusline/raw/gh-pages/ic.png)
-!['R'      Replace mode             ](https://github.com/sunaku/vim-modusline/raw/gh-pages/R.png)
-!['Rc'     Replace mode completion  ](https://github.com/sunaku/vim-modusline/raw/gh-pages/Rc.png)
-!['Rv'     Virtual Replace mode     ](https://github.com/sunaku/vim-modusline/raw/gh-pages/Rv.png)
-!['c'      Command mode             ](https://github.com/sunaku/vim-modusline/raw/gh-pages/c.png)
-!['t'      Terminal mode            ](https://github.com/sunaku/vim-modusline/raw/gh-pages/t.png)
+![ 'n'      Normal mode               ](https://github.com/sunaku/vim-modusline/raw/gh-pages/n.png)
+![ 'no'     Operator-pending mode     ](https://github.com/sunaku/vim-modusline/raw/gh-pages/no.png)
+![ 'v'      Visual mode, by character ](https://github.com/sunaku/vim-modusline/raw/gh-pages/v.png)
+![ 'V'      Visual mode, by line      ](https://github.com/sunaku/vim-modusline/raw/gh-pages/V.png)
+![ <C-V>    Visual mode, blockwise    ](https://github.com/sunaku/vim-modusline/raw/gh-pages/C-V.png)
+![ 's'      Select mode, by character ](https://github.com/sunaku/vim-modusline/raw/gh-pages/s.png)
+![ 'S'      Select mode, by line      ](https://github.com/sunaku/vim-modusline/raw/gh-pages/S.png)
+![ <C-S>    Select mode, blockwise    ](https://github.com/sunaku/vim-modusline/raw/gh-pages/C-S.png)
+![ 'i'      Insert mode               ](https://github.com/sunaku/vim-modusline/raw/gh-pages/i.png)
+![ 'ic'     Insert mode completion    ](https://github.com/sunaku/vim-modusline/raw/gh-pages/ic.png)
+![ 'R'      Replace mode              ](https://github.com/sunaku/vim-modusline/raw/gh-pages/R.png)
+![ 'Rc'     Replace mode completion   ](https://github.com/sunaku/vim-modusline/raw/gh-pages/Rc.png)
+![ 'Rv'     Replace mode virtual      ](https://github.com/sunaku/vim-modusline/raw/gh-pages/Rv.png)
+![ 'c'      Command mode              ](https://github.com/sunaku/vim-modusline/raw/gh-pages/c.png)
+![ 't'      Terminal mode             ](https://github.com/sunaku/vim-modusline/raw/gh-pages/t.png)
 
 ## Variables
 
@@ -34,7 +34,7 @@ You can redefine any of these variables per your customization needs.
 ### `&statusline`
 
 You can define your own custom statusline (the default one is shown below)
-and this plugin will automatically add mode-specific colors/labels to it.
+and this plugin will automatically add mode-specific colors & labels to it.
 
 By default, this variable is defined as follows, unless you override it:
 
@@ -56,6 +56,8 @@ let g:modusline_set_ls = 0
 A dictionary that maps `mode()` values to `%#HLname#` statusline colors.
 If there is no entry for a particular `mode()` value in the dictionary,
 then this plugin falls back to using jarring `%#ErrorMsg#` as the color.
+
+For a list of possible _HLname_ values, run the Vim `:highlight` command.
 
 By default, this variable is defined as follows, unless you override it:
 
@@ -129,7 +131,7 @@ endfunction
 
 ### `ModuslineLabel(modus)`
 
-Returns a user-friendly labels (strings) for the given `mode()` value by
+Returns a user-friendly label (string) for the given `mode()` value by
 referencing the `g:modusline_labels` dictionary, as described earlier:
 If there is no entry for a particular `mode()` value in the dictionary,
 then this plugin falls back to using that `mode()` value as the label.
